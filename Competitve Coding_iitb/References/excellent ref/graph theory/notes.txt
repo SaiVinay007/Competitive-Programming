@@ -1,0 +1,14 @@
+Imp results...
+				The number of  vertices of odd degree in a graph is even. :)
+				
+				
+				
+				
+				
+				
+Imp defns    
+				Incidence.. (boolean)
+				Degree
+				Adjacency edge-edge vertex-vertex
+				Isolated vertex (degree = 0)
+				Pendant / End vertex  (degree =1)

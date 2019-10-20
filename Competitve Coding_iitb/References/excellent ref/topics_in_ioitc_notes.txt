@@ -1,0 +1,23 @@
+Prefix Sum calculations.
+Tiling problems dp solve the one on pg 17
+Other dp applications.
+LIS
+bfs
+dfs
+Dijkstra
+Bellman ford
+heaps
+Segment idea
+Binary Indexed Tree
+Segment Tree
+graph theory - trees.
+Advanced graph theory - Spanning Trees
+Directed Acyclic Graphs
+Union find ds
+Many applications..
+		rook placing
+		dp
+		bipartite graph
+		game theory
+Network flows
+Sorting

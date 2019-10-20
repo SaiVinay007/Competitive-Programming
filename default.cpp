@@ -1,6 +1,7 @@
+#pragma GCC optimize ("-O3")
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 typedef long long int ll;
 typedef long double ld;
 typedef pair<int,int> p32;
@@ -13,7 +14,7 @@ typedef vector<vector<ll> > vv64;
 typedef vector<p64> vp64;
 typedef vector<p32> vp32;
 ll MOD = 998244353;
-ll NUM = 1000000007;
+ll NUM = 1e9+7;
 #define forn(i,e) for(ll i = 0; i < e; i++)
 #define forsn(i,s,e) for(ll i = s; i < e; i++)
 #define rforn(i,s) for(ll i = s; i >= 0; i--)
@@ -24,12 +25,17 @@ ll NUM = 1000000007;
 #define pb push_back
 #define ff first
 #define ss second
+#define INF 1e18
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define all(x) (x).begin(), (x).end()
+#define sz(x) ((ll)(x).size())
+#define zer ll(0)
+ 
 
 int main()
 {
-		    
+    
 
-
-
-	return 0;
+    
+    return 0;
 }
