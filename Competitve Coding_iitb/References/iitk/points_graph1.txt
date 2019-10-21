@@ -1,0 +1,28 @@
+* Definition of Graph
+    * Terminology V, E
+	* Edge-weighted graphs
+	* Special graphs - Tree
+* http://www.spoj.pl/problems/PT07Y/
+* http://www.spoj.pl/problems/PT07Z/
+* Representation of Graphs
+    * Adjacency Matrix
+    * Adjacency List
+	* Edge List
+* Dx, Dy Trick | Grid Graph [ Implicit graphs]
+* Shortest sequence of knight moves in a chess board
+* DFS
+    * http://code.google.com/codejam/contest/dashboard?c=90101#s=p1
+	* http://www.spoj.pl/problems/PARADOX/
+* BFS
+    * http://www.spoj.pl/problems/MICEMAZE/
+* Dijkstra
+    * http://www.spoj.pl/problems/PPATH/
+	* http://www.spoj.pl/problems/CHICAGO/
+	* http://www.spoj.pl/problems/SHOP/
+	* SRM 453.5 Division 2 500 Pt
+* APSP
+    * http://www.spoj.pl/problems/ROADNET/
+* Topological sort
+
+
+http://www.spoj.pl/problems/CHOCOLA/

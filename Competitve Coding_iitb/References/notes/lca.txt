@@ -1,0 +1,8 @@
+
+// Algoritms for lca.
+
+1. log2N using modified binary search .. Storing powers of 2 parents..
+	Looks simple.But we have to convert this to logN
+
+2. The rmq approach .. Have to yet understand this.
+3. Tarzan offline processing. Looks like dsu. But have to study this yet. 
