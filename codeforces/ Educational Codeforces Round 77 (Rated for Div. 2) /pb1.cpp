@@ -31,11 +31,44 @@ ll NUM = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 #define zer ll(0)
- 
+
+
+ll power(ll x, ll y) 
+{ 
+    if (y == 0) 
+        return 1; 
+    else if (y % 2 == 0) 
+        return power(x, y / 2) * power(x, y / 2); 
+    else
+        return x * power(x, y / 2) * power(x, y / 2); 
+} 
 
 int main()
 {
-    
+    ll n;
+    cin>>n;
+
+    v64 sum(n,0);
+    v64 mx_num(n,0);
+    ll ans, rem;
+    ll val;
+    forn(i,n)
+    {
+        val = 0;
+        cin>>mx_num[i]>>sum[i];
+        
+        ans = sum[i]/mx_num[i];
+        rem = sum[i]%mx_num[i];
+
+        val += rem*pow(ans+1,2);
+        val += (mx_num[i]-rem)*pow(ans,2);
+
+        cout<<val<<ln;
+
+
+
+
+    }
 
     
     return 0;

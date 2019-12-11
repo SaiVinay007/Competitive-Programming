@@ -31,11 +31,58 @@ ll NUM = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 #define zer ll(0)
- 
+
+
+ll gcd(ll a, ll b){ 
+    if (a == 0) 
+        return b;  
+    return gcd(b % a, a);  
+} 
+  
+   
+ll lcm(ll a, ll b)  
+{  
+   return (a*b)/gcd(a, b);  
+}  
+
+
+void solve(ll r, ll b, ll k)
+{
+    ll val = __gcd(r, b);
+    
+    b/=val;
+    r/=val;
+
+    if(r > b)
+    {
+		swap(r, b);
+    }
+	if((k - 1) * r + 1 < b)
+    {
+		cout << "REBEL";
+    }
+	else
+    {
+		cout << "OBEY";
+    }
+	cout << endl;
+
+}
+
+
+
 
 int main()
 {
-    
+    ll n;
+    cin>>n;
+
+    forn(i,n)
+    {
+        ll r, b, k;
+        cin>>r>>b>>k;
+        solve(r,b,k);
+    }
 
     
     return 0;

@@ -32,10 +32,69 @@ ll NUM = 1e9+7;
 #define sz(x) ((ll)(x).size())
 #define zer ll(0)
  
+ll pow(ll a,ll b)
+{
+    if(b==1)
+    {
+        return a;
+    }
+    else if(b==0)
+    {
+        return 1;
+    }
+    else if(b%2==0)
+    {
+        return pow(a,b/2)*pow(a,b/2);
+    }
+    else
+    {
+        return a*pow(a,b/2)*pow(a,b/2);
+    }
+    
+}
+
+ll sum(ll x)
+{
+    ll ans = 0;
+    while(x)
+    {
+        ans+=x%10;
+        x/=10;
+    }
+    return ans;
+}
 
 int main()
 {
     
+    ll a,b,c;
+    ll x;
+
+
+    cin>>a>>b>>c;
+    v64 v;
+    ll num=0;
+    forsn(i,1,82)
+    {
+        x = b*pow(i,a)+c;
+
+        if(sum(x)==i && x<1000000000)
+        {
+            // break;
+            v.push_back(x);
+            num+=1;
+        }
+    }
+
+    cout<<num<<ln;
+    if(num>0)
+    {
+        forn(i,v.size())
+        {
+            cout<<v[i]<<" ";
+        }
+
+    }
 
     
     return 0;

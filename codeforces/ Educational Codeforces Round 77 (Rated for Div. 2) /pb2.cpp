@@ -36,7 +36,25 @@ ll NUM = 1e9+7;
 int main()
 {
     
+    ll n;
+    cin>>n;
+    ll a, b;
 
+    forn(i,n)
+    {
+        cin>>a>>b;
+
+        if((a+b)%3==0 && (abs(a-b))<=min(a,b) )
+        {
+            cout<<"YES";
+        }
+        else
+        {
+            cout<<"NO";
+        }
+        cout<<ln;
+        
+    }
     
     return 0;
 }

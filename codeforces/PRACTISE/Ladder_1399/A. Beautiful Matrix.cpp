@@ -35,7 +35,23 @@ ll NUM = 1e9+7;
 
 int main()
 {
-    
+    ll x,y, a;
+    forn(i,5)
+    {
+        forn(j,5)
+        {
+            cin>>a;
+            if(a==1)
+            {
+                x = i+1; // row
+                y = j+1; //col
+            }
+        }
+    }
+    ll ans=0;
+
+    ans+=abs(3-x)+abs(3-y);
+    cout<<ans;
 
     
     return 0;

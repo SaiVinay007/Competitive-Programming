@@ -36,7 +36,22 @@ ll NUM = 1e9+7;
 int main()
 {
     
+    ll n;
+    string s;
+    cin>>n>>s;
 
+    forn(i,s.length())
+    {
+        ll ascii = int(s[i]);
+        ascii += n;
+        if(ascii>90)
+        {
+            ascii-=91;
+            ascii+=65;
+        }
+        char c = ascii;
+        cout<<c;
+    }
     
     return 0;
 }

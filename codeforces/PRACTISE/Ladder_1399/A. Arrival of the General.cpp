@@ -1,6 +1,6 @@
 #pragma GCC optimize ("-O3")
-#include<bits/stdc++.h>
 #include <stdint.h>
+#include<bits/stdc++.h>
 using namespace std;
  
 typedef long long int ll;
@@ -35,7 +35,51 @@ ll NUM = 1e9+7;
 
 int main()
 {
+    int n;
+    cin>>n;
+    int a[n];
+    forn(i,n)
+    {
+        cin>>a[i];
+    }
+
+    int mx = INT16_MIN;
+    int mn = INT16_MAX;
+    int indmx, indmn;
+
+    forn(i,n)
+    {
+        if(a[i]>mx)
+        {
+            mx = a[i];
+            indmx = i;
+        }
+        if(a[i]<=mn)
+        {
+            mn = a[i];
+            indmn = i;
+        }
+    }
+
+    int ans=0;
+    if(indmx<indmn)
+    {
+        ans+=indmx;
+        ans+=n-1-indmn;
+    }
+    else if(indmx==indmn)
+    {
+        ans = 0;
+    }
+    else
+    {
+        ans+=indmx;
+        ans+= n-2-indmn;
+    }
     
+    
+    cout<<ans;
+
 
     
     return 0;

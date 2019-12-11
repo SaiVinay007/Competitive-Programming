@@ -33,10 +33,37 @@ ll NUM = 1e9+7;
 #define zer ll(0)
  
 
-int main()
+void solve(ll n)
 {
-    
+    set <ll> s;
 
-    
+    for(ll i=0;i*i<=n;i++)
+    {
+        s.insert(i);
+        if(i!=0)
+        {
+            s.insert(n/i);
+        }
+    }
+
+    cout<<s.size()<<ln;
+    for (auto it=s.begin(); it != s.end(); ++it) 
+        cout << *it<<" "; 
+    cout<<ln;
+}
+
+int main()
+{   
+    ll t;
+    cin>>t;
+
+    forn(i,t)
+    {
+        ll n;
+        cin>>n;
+
+        solve(n);
+    }
+
     return 0;
 }

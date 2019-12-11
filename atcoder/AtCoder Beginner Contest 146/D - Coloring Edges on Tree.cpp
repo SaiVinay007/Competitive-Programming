@@ -36,7 +36,25 @@ ll NUM = 1e9+7;
 int main()
 {
     
+    ll n;
+    vp64  v;
 
+    cin>>n;
+    v64 num(n+1,0);
+
+    forn(i,n)
+    {
+        ll a,b;
+        cin>>a>>b;
+        v.pb(mp(a,b));
+        num[a]+=1;
+        num[b]+=1;
+    }
     
+    sort(num.begin(), num.end());
+
+
+
+
     return 0;
 }

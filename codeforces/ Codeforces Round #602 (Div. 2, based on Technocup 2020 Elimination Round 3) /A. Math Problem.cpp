@@ -35,7 +35,56 @@ ll NUM = 1e9+7;
 
 int main()
 {
-    
+    ll t;
+    cin>>t;
+
+
+    forn(i,t)
+    {
+        ll n;
+        cin>>n;
+        
+        if(n==1)
+        {
+            ll a,b;
+            cin>>a>>b;
+            cout<<0<<ln;
+        }
+        else
+        {
+            vp64 v;
+            ll a,b;
+            
+            ll mn = INT32_MAX, mx = INT32_MIN;
+            
+            forn(j,n)
+            {
+                cin>>a>>b;
+                v.pb(mp(a,b));
+
+                if(b<mn)
+                {
+                    mn = b;
+                }
+                if(a>mx)
+                {
+                    mx = a;
+                }
+            }
+
+            if(mx>mn)
+            {
+                cout<<mx-mn<<ln;
+            }
+            else
+            {
+                cout<<0<<ln;
+            }
+            
+        }
+
+        
+    }
 
     
     return 0;

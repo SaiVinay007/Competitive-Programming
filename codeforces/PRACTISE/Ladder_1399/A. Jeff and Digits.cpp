@@ -36,6 +36,47 @@ ll NUM = 1e9+7;
 int main()
 {
     
+    ll n;
+    cin>>n;
+    v64 v(n,0);
+
+    ll num=0;
+    forn(i,n)
+    {
+        cin>>v[i];
+        if(v[i]==5)
+        {
+            num+=1;
+        }
+    }
+    ll ze = n-num;
+    if(ze<1)
+    {
+        cout<<-1;
+    }
+    else if(num<9 && ze>0)
+    {
+        cout<<0;
+    }
+    else
+    {
+        num = 9*(num/9);
+        forn(i,n)
+        {
+            if(num>0)
+            {
+                cout<<5;
+                num-=1;
+            }
+            else if(ze>0)
+            {
+                cout<<0;
+                ze-=1;
+            }
+        }
+    }
+    
+
 
     
     return 0;

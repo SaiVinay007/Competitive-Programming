@@ -32,9 +32,66 @@ ll NUM = 1e9+7;
 #define sz(x) ((ll)(x).size())
 #define zer ll(0)
  
+ll get_value(v64 v)
+{
+    if(v.size()==1)
+    {
+        return 0;
+    }
+    else
+    {
+        ll last = v[v.size()-1];
+        rforn(i,v.size()-2)
+        {
+            if(v[i]==last)
+            {
+                return (v.size()-1)-i;
+            }
+        }
+        return 0;    
+    }
+}
+
+void get_num(ll n)
+{
+    v64 v;
+    forn(i,n)
+    {
+        if(i==0)
+        {
+            v.pb(0);
+        }
+        else
+        {
+            ll a=get_value(v);
+            v.pb(a);
+        }
+        
+    }
+    ll last = v[n-1];
+    ll ans=0;
+    forn(i,n)
+    {
+        if(v[i]==last)
+        {
+            ans+=1;
+        }
+    }
+    cout<<ans<<ln;
+}
+
 
 int main()
 {
+    ll t,n;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>n;
+        get_num(n);
+    }
     
 
     

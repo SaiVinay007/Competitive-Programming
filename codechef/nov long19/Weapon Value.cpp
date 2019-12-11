@@ -1,6 +1,7 @@
 #pragma GCC optimize ("-O3")
 #include<bits/stdc++.h>
 #include <stdint.h>
+#include<string>
 using namespace std;
  
 typedef long long int ll;
@@ -33,9 +34,61 @@ ll NUM = 1e9+7;
 #define zer ll(0)
  
 
+ll get_num(string str)
+{
+    ll ans=0;
+    forn(i,str.length())
+    {
+        ans+= str[i] - '0';
+    }
+    return ans;
+}
+
+string get_str(string s1, string s2)
+{
+    string ans = "";
+    forn(i,10)
+    {
+        if(s1[i]==s2[i])
+        {
+            ans+='0';
+        }
+        else
+        {
+            ans+='1';
+        }
+        
+    }
+    return ans;
+}
+
 int main()
 {
-    
+    ll t;
+    cin>>t;
+
+    ll n;
+
+    while(t--)
+    {
+        cin>>n;
+        vector<string> st(n," ");
+        string prev;
+        forn(i,n)
+        {
+            cin>>st[i];
+            if(i!=0)
+            {
+                prev=get_str(st[i], prev);
+            }
+            else
+            {
+                prev=st[i];            
+            }
+            
+        }
+        cout<<get_num(prev)<<ln;
+    }
 
     
     return 0;

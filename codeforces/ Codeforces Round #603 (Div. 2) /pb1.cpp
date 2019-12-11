@@ -36,7 +36,40 @@ ll NUM = 1e9+7;
 int main()
 {
     
+    ll n;
+    cin>>n;
 
+    forn(i,n)
+    {
+        v64 v(3,0);
+        cin>>v[0]>>v[1]>>v[2];
+
+        sort(v.begin(), v.end());
+
+        ll ans=0;
+
+        ll dif = v[2]-v[1];
+
+        if(v[0]>dif)
+        {
+            ans+=dif;
+            v[0]-=dif;
+            v[2]-=dif;
+            ans+=v[0];
+            v[2]-=((v[0]+1)/2);
+            ans+=v[2];
+        }        
+        else
+        {
+            v[2]-=v[0];
+            ans+=v[0];
+            ans+= min(v[2],v[1]);
+        }
+        
+        
+
+        cout<<ans<<ln;
+    }
     
     return 0;
 }

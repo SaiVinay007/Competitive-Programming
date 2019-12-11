@@ -31,11 +31,68 @@ ll NUM = 1e9+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 #define zer ll(0)
- 
+
+ll maxpiz(string s)
+{
+    ll ans=0;
+    char c;
+    ll mx = 0; 
+    forn(i,s.length())
+    {
+        if(s[i]=='1')
+        {
+            ans+=1;
+        }
+        else
+        {
+            if(ans>mx)
+            {
+                mx = ans;
+            }
+            ans=0;
+        }
+        
+    }
+    if(ans>mx)
+    {
+        mx = ans;
+    }
+
+    return mx;
+}
+
 
 int main()
 {
-    
+   ll t;
+   cin>>t;
+
+
+    while(t--)
+    {
+        ll n, k;
+        cin>>n>>k;
+        string s;
+        cin>>s;
+
+        string t;
+        ll mx = 0, val;
+        forn(i,n-k+1)
+        {
+            t = s;
+            forn(j,k)
+            {
+                t[i+j]='1';
+            }
+            val = maxpiz(t);
+            if(val>mx)
+            {
+                mx = val;
+            }
+        }
+
+        cout<<mx<<ln;  
+   }
 
     
     return 0;

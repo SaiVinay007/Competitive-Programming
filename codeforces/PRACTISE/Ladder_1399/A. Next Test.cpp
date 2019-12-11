@@ -35,7 +35,30 @@ ll NUM = 1e9+7;
 
 int main()
 {
-    
+    ll n;
+    cin>>n;
+
+    v64 v(n+1,1);
+
+    ll mn = 1;
+    ll a;
+    forn(i,n)
+    {
+        cin>>a;
+        if(a-1<n)
+        {
+            v[a-1]=0;
+        }
+    }
+
+    forn(i,n+1)
+    {
+        if(v[i]==1)
+        {
+            cout<<i+1;
+            break;
+        }
+    }
 
     
     return 0;

@@ -33,9 +33,32 @@ ll NUM = 1e9+7;
 #define zer ll(0)
  
 
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define F0R(i, a) for (int i=0; i<(a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+
 int main()
 {
     
+    ll A, B, X; 
+    cin >> A >> B >> X;
+    if (A * 1000000000 + B * 10 <= X) {
+        cout << 1000000000 << endl; return 0;
+    }
+
+    rforsn(dig, 8, 0) 
+    {
+        ll powTen = 1;
+        forn(i, dig) powTen *= 10;
+        if (powTen * A + B * (dig+1) <= X) {
+            X -= B * (dig+1);
+            cout << min(X / A, powTen*10-1) << endl;
+            return 0;
+        }
+    }
+    
+    cout << 0 << endl;  
 
     
     return 0;
