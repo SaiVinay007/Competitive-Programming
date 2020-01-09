@@ -54,9 +54,46 @@ int main()
     ll t;
     cin>>t;
 
-    while(t--)
+    while (t--)
     {
+        ll n;
+        cin>>n;
+
+        set<ll > st;
+
+        forn(i,n)
+        {
+            ll a;
+            cin>>a;
+            if(a%2==0)
+            {
+                st.insert(a);
+            }
+        }
         
+
+        ll ans=0;
+        ll val;
+        ll num = st.size();
+        // dbg(num);
+        while(num>0)
+        {
+            set<ll>::reverse_iterator rit; 
+            rit = st.rbegin();
+            // dbg(*rit);
+            val = *rit;
+            st.erase(val);
+            val/=2;
+            if(val%2==0)
+            {
+                st.insert(val);
+            }
+            ans+=1;                
+            
+            num=st.size();
+            // dbg(num);
+        }
+        cout<<ans<<ln;
     }
 
     

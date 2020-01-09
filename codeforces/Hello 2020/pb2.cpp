@@ -51,14 +51,75 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
+    ll n;
+    cin>>n;
 
-    while(t--)
+    v64 assent(n,0);
+    v64 des_st(n);
+    v64 des_ed(n);
+
+    ll num_ass=0;
+    forn(i,n)
     {
+        ll le;
+        cin>>le;
+        ll a, prev, flg=0;
+
+        v64 v(le);
+        forn(j,le)
+        {
+            cin>>v[j];
+            if(j!=0)
+            {
+                if(v[j]>prev && flg==0)
+                {
+                    assent[i]=1;
+                    num_ass+=1;
+                    flg=1;
+                }
+            }
+            prev = v[j];
+        }
+
+        if(flg==0)
+        {
+            des_ed[i] = v[le-1];
+            des_st[i] = v[0];
+        }
+    }
+    v64 sort_ed, sort_st;
+
+    sort_ed = des_ed;
+    sort_st = des_st;
+
+    sort(sort_ed.begin(), sort_ed.end());
+    sort(sort_st.begin(), sort_st.end());
+    
+
+    ll ans=0;
+    forn(i,n)
+    {
+
+        if(assent[i]==1)
+        {
+            ans+= n;
+        }
+        else
+        {
+            ans+=num_ass;
+            ll cnt;
+
+            auto upper = upper_bound(sort_st.begin(), sort_st.end(), des_ed[i]);
+            cnt = sort_st.size() -(upper- sort_st.begin());
+
+            ans+= cnt;
+
+        }
         
     }
 
+
+    cout<<ans;
     
     return 0;
 }

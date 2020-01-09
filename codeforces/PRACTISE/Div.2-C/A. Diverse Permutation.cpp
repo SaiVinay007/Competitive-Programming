@@ -51,14 +51,23 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
+    ll n,k;
+    cin>>n>>k;
 
-    while(t--)
+    ll j, it;
+
+    j=1,it=k+1;
+    
+    for(ll i=1;i<=k+1;i++)
     {
-        
+        if(i%2) {cout<<j<<' ';j++;}
+        else {cout<<it<<' ';it--;}
+    }
+    
+    for(ll i=k+2;i<=n;i++,j)
+    { 
+    cout<<i<<' ';
     }
 
-    
     return 0;
 }

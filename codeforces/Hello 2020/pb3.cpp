@@ -49,16 +49,20 @@ inline void swap( ll &a, ll &b){ ll temp=a; a=b; b=temp; return;}
 inline ll max3( ll a, ll b, ll c){ return max(a,max(b,c));}
 inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
+
+ll dp[250001];
+
 int main()
 {
-    ll t;
-    cin>>t;
-
-    while(t--)
-    {
-        
-    }
-
+    ll n,m;
+    cin>>n>>m;
+    dp[0] = 0;
+    dp[1] = 1;
     
+    ll r; 
+
+
+
+
     return 0;
 }

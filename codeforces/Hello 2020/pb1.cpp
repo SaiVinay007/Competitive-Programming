@@ -51,12 +51,61 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
+    ll n,m;
+    cin>>n>>m;
 
-    while(t--)
+    vector<string> st1,st2;
+    string s;
+    forn(i,n)
     {
+        cin>>s;
+        st1.push_back(s);
+    }
+    forn(i,m)
+    {
+        cin>>s;
+        st2.push_back(s);
+    }
+
+    ll q, a;
+    cin>>q;
+
+    forn(i,q)
+    {
+        cin>>a;
+        string s1,s2;
+        ll p,q;
+        p = a%(n);
+        q = a%(m);
+
         
+
+        if(p==0)
+        {
+            p=n-1;
+        }
+        else
+        {
+            p-=1;
+        }
+        
+        if(q==0)
+        {
+            q=m-1;
+        }
+        else
+        {
+            q-=1;
+        }
+        
+
+        s1 = st1[p];
+        s2 = st2[q];
+
+        string n;
+        n = s1+s2;
+        cout<<n<<endl;
+
     }
 
     

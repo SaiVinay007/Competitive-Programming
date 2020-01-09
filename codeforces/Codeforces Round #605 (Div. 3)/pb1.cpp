@@ -53,11 +53,23 @@ int main()
 {
     ll t;
     cin>>t;
-
-    while(t--)
+    
+    while (t--)
     {
+        v64 v(3,0);
+        cin>>v[0]>>v[1]>>v[2];
+
+        sort(v.begin(), v.end());
+
+        ll a = v[0];
+        ll b=v[1];
+        ll c = v[2];
+
+        ll ans = abs(a-b)+abs(b-c)+abs(c-a);
+        cout<<max((ans-4), 0)<<ln; 
         
     }
+    
 
     
     return 0;

@@ -51,13 +51,7 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
-
-    while(t--)
-    {
-        
-    }
+    
 
     
     return 0;

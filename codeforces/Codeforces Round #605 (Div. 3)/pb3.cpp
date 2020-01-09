@@ -51,13 +51,41 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
+    ll n,k;
+    cin>>n>>k;
 
-    while(t--)
+    string s;
+    cin>>s;
+    set<char> st;
+    forn(i,k)
     {
-        
+        char c;
+        cin>>c;
+        st.insert(c);
     }
+
+    ll ans=0;
+    ll sum=0;
+    forn(i,n)
+    {
+        if(!st.count(s[i]))
+        {
+            sum+= (ans*(ans+1))/2;
+            ans=0;
+        }
+        else
+        {
+            ans+=1;
+        }
+    }
+
+    if(ans!=0)
+    {
+        sum+=(ans*(ans+1))/2;
+    }
+
+    cout<<sum;
+
 
     
     return 0;

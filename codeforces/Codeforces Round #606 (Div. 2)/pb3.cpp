@@ -54,9 +54,65 @@ int main()
     ll t;
     cin>>t;
 
-    while(t--)
+    while (t--)
     {
+        string s, s1, s2, s3, s4, s5;
+        cin>>s;
+        s1 = "one";
+        s2 = "two";
+        s3 = "twone";
+        s4 = "zzz";
+        s5 = "zzzzz";
+        ll ans=0;
+        v64 v;
         
+
+        if(s.length()>4)
+        {
+            forn(i,s.length()-4)
+            {
+                if(s.substr(i,5)==s3)
+                {
+                    v.pb(i+2);
+                    s.replace(i,5,s5);
+                    ans+=1;
+                }
+            }
+        }
+        
+        if(s.length()>2)
+        {
+            forn(i,s.length()-2)
+            {
+                if(s.substr(i,3)==s1)
+                {
+                    v.pb(i+1);
+                    s.replace(i,3,s4);
+                    ans+=1;
+                }
+            }
+
+            forn(i,s.length()-2)
+            {
+                if(s.substr(i,3)==s2)
+                {
+                    v.pb(i+1);
+                    s.replace(i,3,s4);
+                    ans+=1;
+                }
+            }
+
+        }
+        
+
+        cout<<ans<<ln;
+        forn(i,v.size())
+        {
+            cout<<v[i]+1<<" ";
+        }
+        cout<<ln;
+
+
     }
 
     

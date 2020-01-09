@@ -54,10 +54,47 @@ int main()
     ll t;
     cin>>t;
 
-    while(t--)
+    while (t--)
     {
+        ll n;
+        cin>>n;
+
+        string s = to_string(n);
+        ll val = s.length();
+
+        ll ans = 0;
+        ans+= (val-1)*9;
+
+
+        ll rem = 0;
+
+        char c = s[0];
+        // cout<<c;
+        ll frn = c - '0';
+        // dbg(frn);
+        rem += frn-1;
+
+        string str = "";
         
+
+        forn(i,val)
+        {
+            str+=c;
+        }
+        // cout<<str;
+
+        ll temp = stoi(str);
+        if(n>=temp)
+        {
+            rem+=1;
+        }
+
+        ll fin = ans+rem;
+        cout<<fin<<ln;
+
+
     }
+    
 
     
     return 0;

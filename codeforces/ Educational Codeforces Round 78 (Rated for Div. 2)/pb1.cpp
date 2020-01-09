@@ -49,6 +49,35 @@ inline void swap( ll &a, ll &b){ ll temp=a; a=b; b=temp; return;}
 inline ll max3( ll a, ll b, ll c){ return max(a,max(b,c));}
 inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
+
+bool compare(map<char, int> m1, map<char, int> m2, set<char> st)
+{
+    for (auto it=st.begin(); it != st.end(); ++it)
+    { 
+        if(m1[*it]!=m2[*it])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+map<char, int> create_map(string p)
+{
+    map<char, int> m1;
+    forn(i,p.length())
+    {
+        if ( m1.find(p[i]) == m1.end() ) 
+        {
+            m1[p[i]]=1;
+        } else 
+        {
+            m1[p[i]]+=1;
+        }
+    }
+    return m1;
+}
+
 int main()
 {
     ll t;
@@ -56,7 +85,51 @@ int main()
 
     while(t--)
     {
+        string p,h;
+        cin>>p>>h;
+
+        string s1,s2;
+
+        ll l1,l2;
+        l1 = p.length();
+        l2 = h.length();
+
+        map<char,int> m1,m2;
+
+        string tp;
+        set<char> st;
+
+        forn(i,l1)
+        {
+            if ( m1.find(p[i]) == m1.end() ) 
+            {
+                m1[p[i]]=1;
+            } else 
+            {
+                m1[p[i]]+=1;
+            }
+
+            st.insert(p[i]);
+        }
+        ll flg=0;
+        forn(i,l2-l1+1)
+        {
+            tp = h.substr(i,l1);
+            m2 = create_map(tp);
+            if(compare(m1,m2,st))
+            {
+                cout<<"YES"<<'\n';
+                flg=1;
+                break;
+            }
+        }
+        if(!flg)
+        {
+            cout<<"NO"<<'\n';
+        }
         
+
+
     }
 
     

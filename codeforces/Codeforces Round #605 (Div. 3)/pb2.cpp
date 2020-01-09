@@ -51,13 +51,90 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
+    
     ll t;
     cin>>t;
 
-    while(t--)
+    while (t--)
     {
+        string s;
+
+        ll nl=0,nr=0,nu=0,nd=0;
+
+        cin>>s;
+
+        forn(i,s.length())
+        {
+            if(s[i]=='L')
+            {
+                nl+=1;
+            }
+            else if(s[i]=='R')
+            {
+                nr+=1;
+            }
+            else if(s[i]=='U')
+            {
+                nu+=1;
+            }
+            else if(s[i]=='D')
+            {
+                nd+=1;
+            }
+        }
+
+        ll ans=0;
+        ll a,b;
+        a = min(nl,nr);
+        b = min(nu,nd);
+
+        if(a==0 || b==0)
+        {
+            if(a==0 && (nu!=0) && (nd!=0))
+            {
+                cout<<2<<ln;
+                cout<<"UD";
+            }
+            else if(b==0 && (nl!=0) && (nr!=0) )
+            {
+                cout<<2<<ln;
+                cout<<"LR";
+            }
+            else
+            {
+                cout<<0;
+            }
+            
+            cout<<ln;
+            continue;
+            
+        }
+
+        ans = 2*(a+b);
+
+        cout<<ans<<ln;
         
+        forn(i,a)
+        {
+            cout<<"L";
+        }
+        forn(i,b)
+        {
+            cout<<"U";
+        }
+        forn(i,a)
+        {
+            cout<<"R";
+        }
+        forn(i,b)
+        {
+            cout<<"D";
+        }
+        cout<<ln;
+       
+
     }
+    
 
     
     return 0;

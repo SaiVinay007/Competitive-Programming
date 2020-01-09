@@ -49,6 +49,70 @@ inline void swap( ll &a, ll &b){ ll temp=a; a=b; b=temp; return;}
 inline ll max3( ll a, ll b, ll c){ return max(a,max(b,c));}
 inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
+void solve(ll a, ll b)
+{
+    ll num=1;
+    ll ans=0;
+    ll mx,mn;
+    while (true)
+    {
+        mx = max(a,b);
+        mn = min(a,b);
+        ll dif = mx-mn; 
+
+        if(a==b)
+        {
+            cout<<ans<<'\n';
+            break;
+        }
+        
+        if(a>b && num<=dif)
+        {
+            b+=num;
+        }
+        else if(b>a && num<=dif)
+        {
+            a+=num;
+        }
+        else if(((mn+num)-mx)<dif)
+        {
+            if(a>b)
+            {
+                b+=num;
+            }
+            else
+            {
+                a+=num;
+            }
+        }
+        else
+        {
+            while(true)
+            {
+                ll i=1;
+                while((i+1)*(i+1)<=dif || ((i+1)*(i+1)-dif)<(dif-i*i))
+                {
+                    i+=1;
+                }
+                dif-=i*i;
+                dif = abs(dif);
+                ans+=2*i;
+                if(dif==0)
+                {
+                    break;
+                }
+            }
+            cout<<ans<<'\n';
+            break;
+
+        }
+        num+=1;
+        ans+=1;
+    }
+    
+}
+
+
 int main()
 {
     ll t;
@@ -56,6 +120,9 @@ int main()
 
     while(t--)
     {
+        ll a,b;
+        cin>>a>>b;
+        solve(a,b);
         
     }
 

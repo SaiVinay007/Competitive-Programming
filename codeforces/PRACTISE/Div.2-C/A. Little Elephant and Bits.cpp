@@ -51,14 +51,41 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
-
-    while(t--)
-    {
-        
-    }
-
     
+    string s;
+    cin>>s;
+    v64 v(s.length(),0);
+    ll flg=0;
+    forn(i,s.length())
+    {
+        if(s[i]=='0')
+        {
+            v[i]=1;
+            flg=1;
+            break;
+        }
+    }
+    
+    if(flg==0)
+    {
+        forn(i,s.length()-1)
+        {
+            cout<<s[i];
+        }
+    }
+    else
+    {
+        forn(i,s.length())
+        {
+            if(v[i]==1)
+            {
+                continue;
+            }
+            cout<<s[i];
+        }
+    }
+    
+
+
     return 0;
 }

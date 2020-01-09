@@ -51,13 +51,41 @@ inline ll min3( ll a, ll b, ll c){ return min(a,min(b,c));}
 
 int main()
 {
-    ll t;
-    cin>>t;
+    ll n;
+    cin>>n;
 
-    while(t--)
+    vp64 v;
+
+    forn(i,n)
     {
+        ll a, b;
+        cin>>a>>b;
+        v.pb(mp(a,b));
+    }
+
+    sort(v.begin(), v.end());
+    ll ans=0;
+    ll x1,y1,x2,y2;
+
+    x1 = v[0].ff;
+    y1 = v[0].ss;
+
+    forsn(i,1,n)
+    {
+        x2 = v[i].ff;
+        y2 = v[i].ss;
+        if((x2-x1)==0 || (y2-y1)==0)
+        {
+            continue;
+        }
+        else
+        {
+            ans+=1;
+        }
         
     }
+    
+    cout<<ans;
 
     
     return 0;
